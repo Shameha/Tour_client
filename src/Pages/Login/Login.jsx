@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import img from "../../assets/login-form.gif"
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Button from "../../Provider/Button";
 const Login = () => {
 const {signIn} = useContext(AuthContext);
 
@@ -54,6 +55,9 @@ const handlLogin = e =>{
         </div>
       </form>
       <p className="text-center mt-4 mb-4">New Here <Link className="text-green-600" to='/singup'>Sing up</Link> </p>
+    <div className="px-20 mt-4 mb-4">
+    <Button></Button>
+    </div>
     </div>
   </div>
 </div>
