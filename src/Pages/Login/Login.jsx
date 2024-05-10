@@ -1,6 +1,12 @@
 // import React from 'react';
+import { Link } from "react-router-dom";
 import img from "../../assets/login-form.gif"
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
+const {signIn} = useContext(AuthContext);
+
+
 const handlLogin = e =>{
     e.preventDefault();
     console.log(e.currentTarget);
@@ -9,6 +15,14 @@ const handlLogin = e =>{
       
           const password = form.get('password');
         console.log(email,password);
+
+        signIn(email,password)
+        .then(result =>{
+          const user = result.user;
+          console.log(user);
+      })
+      .catch(error => console.log(error))
+
 }
 
     return (
@@ -24,13 +38,13 @@ const handlLogin = e =>{
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
+          <input type="email" name="email" placeholder="email" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
+          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
@@ -39,6 +53,7 @@ const handlLogin = e =>{
           <input className="btn btn-primary"  type="submit" value="Login" />
         </div>
       </form>
+      <p className="text-center mt-4 mb-4">New Here <Link className="text-green-600" to='/singup'>Sing up</Link> </p>
     </div>
   </div>
 </div>
