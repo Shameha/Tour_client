@@ -12,7 +12,7 @@ const Navbar = () => {
 
     <li><NavLink to="/">Home</NavLink></li>
     <li><NavLink to="/volunteer">Need Volunteer</NavLink></li>
-        {/* <li><NavLink to="/addedTour">Add Tourists Spot</NavLink></li> */}
+        {/* <li><NavLink to="/added">Add </NavLink></li> */}
       
         {/* <li><NavLink to="/list">My List</NavLink></li> */}
     
@@ -47,14 +47,8 @@ const Navbar = () => {
         </div>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-52">
-        <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><a><Link to='/added'> Add Volunteer Post</Link></a></li>
+        <li><a>Manage My Post</a></li>
       </ul>
     </div>
  
