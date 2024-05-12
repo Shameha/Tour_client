@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged,  signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,7 +51,10 @@ const signIn = (email,password)=>{
     return signInWithEmailAndPassword(auth,email,password);
 }
 
-
+const logOut = () =>{
+    setLoading(true);
+    return signOut(auth);
+}
 
 useEffect(() =>{
 const unsubscribe = onAuthStateChanged(auth,currentUser=>{
@@ -70,7 +73,8 @@ loading,
 creatUser,
 updateUseprofile,
 signIn,
-googleLogin
+googleLogin,
+logOut
 
 }
 

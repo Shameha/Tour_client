@@ -7,6 +7,10 @@ import AddVol from "../Pages/AddVol/AddVol";
 import Need from "../Pages/Need/Need";
 import CheckOut from "../Pages/checkOut/CheckOut";
 import Details from "../Pages/Details/Details";
+import Grid from "../Pages/Grid/Grid";
+import VolPost from "../Pages/VolPost/VolPost";
+import PrivateRoute from "./PrivateRoute";
+// import { Grid } from "swiper/modules";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +49,17 @@ const router = createBrowserRouter([
             path:'/detail/:id',
             element:<Details></Details>,
             loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`)
+            
+        },
+        {
+            path:'/grid',
+            element:<Grid></Grid>,
+            loader: ()=> fetch('http://localhost:5000/volunteer')
+            
+        },
+        {
+            path:'/post',
+            element:<PrivateRoute><VolPost></VolPost></PrivateRoute>
             
         }
 
