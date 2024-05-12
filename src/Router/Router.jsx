@@ -10,6 +10,8 @@ import Details from "../Pages/Details/Details";
 import Grid from "../Pages/Grid/Grid";
 import VolPost from "../Pages/VolPost/VolPost";
 import PrivateRoute from "./PrivateRoute";
+import VolNeed from "../Pages/VolNeed/VolNeed";
+import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 // import { Grid } from "swiper/modules";
 
 const router = createBrowserRouter([
@@ -60,6 +62,16 @@ const router = createBrowserRouter([
         {
             path:'/post',
             element:<PrivateRoute><VolPost></VolPost></PrivateRoute>
+            
+        },
+        {
+            path:'/vol',
+            element:<VolNeed></VolNeed>
+            
+        },
+        {
+            path:'/update/:id',
+            element:<UpdatePage></UpdatePage>
             
         }
 

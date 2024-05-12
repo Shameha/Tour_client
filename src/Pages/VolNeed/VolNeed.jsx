@@ -1,20 +1,27 @@
 // import React from 'react';
 
-import { useContext, useEffect, useState } from "react";
+import {  useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import VolPostRow from "./VolPostRow";
+import VolNeedRow from "./VolNeedRow";
 import Swal from "sweetalert2";
 
-const VolPost = () => {
-    const{user} = useContext(AuthContext);
-    const [vol,setVol] = useState([]); 
-    const url = `http://localhost:5000/beVolunteer?email1=${user.email}`;
-    useEffect( ()=>{
- fetch(url)
- .then(res => res.json())
- .then(data => setVol(data))
-    },[])
-    const handleDelete = id =>{
+
+
+const VolNeed = () => {
+    const {user} = useContext(AuthContext);
+    const [item,setItem] = useState([])
+
+
+    useEffect(() =>{
+        fetch(`http://localhost:5000/involunteer/${user?.email}`)
+         .then(res=>res.json())
+         .then(data =>{
+           console.log(data);
+           setItem(data)
+         });
+       },[user?.email])
+
+  const handleDelete = id =>{
         Swal.fire({
           title: "Are you sure?",
           text: "You won't be able to revert this!",
@@ -25,7 +32,7 @@ const VolPost = () => {
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/beVolunteer/${id}`,
+            fetch(`http://localhost:5000/delete/${id}`,
       {
          method:'DELETE',
     
@@ -48,10 +55,9 @@ const VolPost = () => {
           });
       }
 
-
     return (
         <div>
-            {/* <h2> your booking:{vol.length}</h2> */}
+            <h1>{item.length}</h1>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -71,11 +77,11 @@ const VolPost = () => {
     <tbody>
       {/* row 1 */}
      {
-        vol.map(vols => <VolPostRow
-        key={vols._id}
-        vols={vols}
+        item.map(p => <VolNeedRow
+        key={p._id}
+        p={p}
         handleDelete={handleDelete}
-        ></VolPostRow>)
+        ></VolNeedRow>)
      }
     </tbody>
   </table>
@@ -84,4 +90,4 @@ const VolPost = () => {
     );
 };
 
-export default VolPost;
+export default VolNeed;
