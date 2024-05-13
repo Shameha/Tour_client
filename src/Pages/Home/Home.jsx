@@ -21,7 +21,7 @@ const Home = () => {
             
             </div> 
             <div className="justify-center py-10 px-10">
-            <Link to='/need'><button className="btn btn-secondary">Secondary</button></Link>
+            {/* <Link to='/need'><button className="btn btn-secondary">Secondary</button></Link> */}
             </div>
         </div>
     );
