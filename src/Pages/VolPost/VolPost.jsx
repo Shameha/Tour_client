@@ -10,7 +10,9 @@ const VolPost = () => {
     const [vol,setVol] = useState([]); 
     const url = `http://localhost:5000/beVolunteer?email1=${user.email}`;
     useEffect( ()=>{
- fetch(url)
+ fetch(url,{
+  credentials:'include'
+ })
  .then(res => res.json())
  .then(data => setVol(data))
     },[])
