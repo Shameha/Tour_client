@@ -9,21 +9,13 @@ import { useState } from "react";
 
 const Need = () => {
     const vol = useLoaderData();
-    const [view,setView] = useState(false);
-    const [search,setSearch] = useState("");
-     const onChange = e =>{
-        setSearch(e.target.value)
-     }
-
-     const onSearch = (searchItem) =>{
-        console.log("search",searchItem);
-     }
+    const [view,setView] = useState(false)
     return (
         <div>
 
 <div className="join">
-  <input value={search} onChange={onChange} className="input input-bordered join-item" placeholder="search"/>
-  <button onClick={()=>onSearch(search)} className="btn join-item rounded-r-full">enter</button>
+  <input className="input input-bordered join-item" placeholder="search"/>
+  <button className="btn join-item rounded-r-full">enter</button>
 </div>
             
             <div className=" flex gap-5 justify-center">
@@ -39,19 +31,8 @@ const Need = () => {
             view === true ? 
             <div className="grid lg:grid-cols-3  md:grid-cols-2 grid-cols-1 gap-5">
             {
-              vol
-            . filter((volunteer)=>{
-            const serchItem = search.toLowerCase() ;
-            const title = volunteer.title.toLowerCase();
-            return serchItem && title.includes(serchItem)
-            })
-              .map(volunteer=>
-
-              
-              <VolCard key={volunteer._id}
-                  volunteer={volunteer}
-                  onClick={()=>onSearch(volunteer.title)}
-                  >
+              vol.map(volunteer=><VolCard key={volunteer._id}
+                  volunteer={volunteer}>
   
               </VolCard>)
              }

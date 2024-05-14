@@ -8,6 +8,7 @@ import Swal from 'sweetalert2'
 const CheckOut = () => {
     const{user} = useContext(AuthContext)
     const volun = useLoaderData();
+    // const[quantity,setQuantity] = useState(5);
     const{_id,title,description,volunt,location,time,category,name,email,photo,request}= volun;
     const handleVol = e=>{
         e.preventDefault();
@@ -59,6 +60,15 @@ const CheckOut = () => {
             
 
     }
+    // const handleDecrement = () =>{
+    //   setQuantity(p => p-1 );
+    // }
+
+    let listing = <p className="font-bold text-center text-2xl">no records found</p>
+    if(volunt.length>0){
+      listing =  <input  type="submit" value="Request" className="btn btn-block bg-purple-400" />
+      
+    }
     return (
         <div className="min-h-screen">
         <h1 className="text-3xl font-bold text-center mt-2">Be a Volunteer</h1>
@@ -105,6 +115,7 @@ const CheckOut = () => {
             <span className="label-text"> No. of volunteers needed</span>
           </label>
           <input type="text" defaultValue={volunt} className="input input-bordered" required />
+          {/* <div>{volunt}:{quantity}</div> */}
         </div>
         <div className=" form-control">
           <label className="label">
@@ -166,7 +177,8 @@ const CheckOut = () => {
         </div>
        </div>
         <div className="form-control mt-6">
-        <input type="submit" value="Request" className="btn btn-block bg-purple-400" />
+         
+        {listing}
         </div>
       </form>
     </div>

@@ -112,7 +112,7 @@ fetch(`http://localhost:5000/updateTour/${id}`,{
         </div>
        <div className=" form-control">
           <label className="label">
-            <span className="label-text">No. of volunteer</span>
+            <span className="label-text">Category</span>
           </label>
           <input type="text" placeholder="Category" name="category"  className="input input-bordered" required />
         </div>
