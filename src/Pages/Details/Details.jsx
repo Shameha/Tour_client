@@ -1,10 +1,14 @@
 // import React from 'react';
 
+// import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
     const details = useLoaderData()
     const{_id,title,description,location,time,category,photo} = details
+    // const[cart,setCart] = useState([])
+  
+
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">

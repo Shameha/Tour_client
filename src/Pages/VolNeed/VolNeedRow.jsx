@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const VolNeedRow = ({p,handleDelete}) => {
     const {_id,title,category,photo,volunt,time}= p;
     return (
-        <div>
+        
            <tr>
         <th>
         {/* <button onClick={()=>handleDelete(_id)} className="btn btn-sm btn-circle">
@@ -38,7 +38,7 @@ const VolNeedRow = ({p,handleDelete}) => {
          </div>
         </th>
       </tr>   
-        </div>
+        
     );
 };
 

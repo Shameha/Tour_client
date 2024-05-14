@@ -50,6 +50,21 @@ const VolPost = () => {
           });
       }
 
+let listing = <p className="font-bold text-center text-2xl">no records found</p>
+if(vol.length>0){
+listing =    <tbody>
+{/* row 1 */}
+{
+  vol.map(vols => <VolPostRow
+  key={vols._id}
+  vols={vols}
+  handleDelete={handleDelete}
+  ></VolPostRow>)
+}
+</tbody>
+
+}
+
 
     return (
         <div>
@@ -70,16 +85,9 @@ const VolPost = () => {
         <th></th>
       </tr>
     </thead>
-    <tbody>
-      {/* row 1 */}
-     {
-        vol.map(vols => <VolPostRow
-        key={vols._id}
-        vols={vols}
-        handleDelete={handleDelete}
-        ></VolPostRow>)
-     }
-    </tbody>
+ {
+  listing
+ }
   </table>
 </div>
         </div>

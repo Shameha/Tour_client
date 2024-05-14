@@ -28,7 +28,7 @@ const Home = () => {
             </div>
 
             <div>
-              <h1>iyyygg</h1>
+            
               <Extra></Extra>
             </div>
         </div>
