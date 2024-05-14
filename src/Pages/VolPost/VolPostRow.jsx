@@ -3,7 +3,7 @@
 // import Swal from "sweetalert2";
 
 const VolPostRow = ({vols,handleDelete}) => {
-    const {_id,title,category,photo,volunt,time}= vols;
+    const {_id,title,category,photo,volunt,time,email}= vols;
     // const handleDelete = id =>{
 //         const procced = confirm( Swal.fire({
 //             title: "Deleted!",
@@ -31,7 +31,7 @@ const VolPostRow = ({vols,handleDelete}) => {
 //     }
     // }
     return (
-        <div>
+        <>
          <tr>
         <th>
         <button onClick={()=>handleDelete(_id)} className="btn btn-sm btn-circle">
@@ -58,10 +58,10 @@ const VolPostRow = ({vols,handleDelete}) => {
         </td>
         <td>{volunt}</td>
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button className="btn btn-ghost btn-xs">{email}</button>
         </th>
       </tr>    
-        </div>
+        </>
     );
 };
 

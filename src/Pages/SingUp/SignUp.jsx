@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 import img from "../../assets/login-form.gif"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+
+
+
 const SignUp = () => {
-    const {creatUser,updateUseprofile} = useContext(AuthContext)
-    const handlSignUp = e =>{
+    
+  const {creatUser,updateUseprofile} = useContext(AuthContext)
+  const[open,setOpen] = useState(false);
+  const handlSignUp = e =>{
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
@@ -54,6 +61,12 @@ const SignUp = () => {
         })
     
     }
+    const toggle =() =>{
+      setOpen(!open)
+    }
+
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
@@ -64,7 +77,7 @@ const SignUp = () => {
 
         {/* <Helmet><title>Bella thorn| Register</title></Helmet> */}
       <h1 className="text-3xl my-10 text-center">Please Register</h1>
-       <form onSubmit={handlSignUp} className="card-body  mx-auto md:w-3/4 lg:w-1/2">
+       <form onSubmit={handlSignUp} className="card-body  mx-auto md:w-3/4 ">
 
 
       <div className="form-control">
@@ -92,10 +105,9 @@ const SignUp = () => {
         </label>
         <input type={(open === false)? "password":"text"}placeholder="password" name="password" className="input input-bordered" required />
         <div className="text-xl absolute top-10 right-5">
-       {/* {
-        (open === false)?<FaEyeSlash onClick={toggle} />:<IoEyeSharp onClick={toggle}  />
-       }  */}
-       
+        {
+        (open === false)? <FaEye onClick={toggle} />: <FaEyeSlash onClick={toggle}  />
+       } 
        
         
        </div>

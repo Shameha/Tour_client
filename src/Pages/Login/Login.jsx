@@ -1,12 +1,14 @@
 // import React from 'react';
 import { Link } from "react-router-dom";
 import img from "../../assets/login-form.gif"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Button from "../../Provider/Button";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 const Login = () => {
 const {signIn} = useContext(AuthContext);
-
+const[open,setOpen] = useState(false);
 
 const handlLogin = e =>{
     e.preventDefault();
@@ -24,6 +26,9 @@ const handlLogin = e =>{
       })
       .catch(error => console.log(error))
 
+}
+const toggle =() =>{
+  setOpen(!open)
 }
 
     return (
@@ -45,8 +50,16 @@ const handlLogin = e =>{
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+          <input type={(open === false)? "password":"text"} name="password" placeholder="password" className="input input-bordered" required />
+          <div className="text-xl absolute  right-5" >
+          {
+        (open === false)? <FaEye onClick={toggle} />: <FaEyeSlash onClick={toggle}  />
+       
+       } 
+          </div>
+          
           <label className="label">
+
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>

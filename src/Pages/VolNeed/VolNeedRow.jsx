@@ -32,7 +32,7 @@ const VolNeedRow = ({p,handleDelete}) => {
         </td>
         <td>{volunt}</td>
         <th>
-         <div className="flex gap-5">
+         <div className="lg:flex col-span-1 gap-5">
          <button onClick={()=>handleDelete(_id)} className="btn btn-success">Delete</button>
           <Link to={`/update/${_id}`}><button className="btn btn-warning">Update</button></Link> 
          </div>
