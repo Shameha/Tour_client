@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 const VolPost = () => {
     const{user} = useContext(AuthContext);
     const [vol,setVol] = useState([]); 
-    const url = `http://localhost:5000/beVolunteer?email1=${user.email}`;
+    const url = `https://assignment11-topaz.vercel.app/beVolunteer?email1=${user.email}`;
     useEffect( ()=>{
  fetch(url,{
   credentials:'include'
@@ -28,7 +28,7 @@ const VolPost = () => {
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/beVolunteer/${id}`,
+            fetch(`https://assignment11-topaz.vercel.app/beVolunteer/${id}`,
       {
          method:'DELETE',
     

@@ -25,7 +25,7 @@ const newVol = {title,description,volunt,location,time,category,name,email,photo
 console.log(newVol);
 //send data to server
 
-fetch('http://localhost:5000/volunteer',{
+fetch('https://assignment11-topaz.vercel.app/volunteer',{
   method:'POST',
   headers:{
     'content-type':'application/json'

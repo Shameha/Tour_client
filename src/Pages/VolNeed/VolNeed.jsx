@@ -15,7 +15,7 @@ const VolNeed = () => {
 
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/involunteer/${user?.email}`)
+        fetch(`https://assignment11-topaz.vercel.app/involunteer/${user?.email}`)
          .then(res=>res.json())
          .then(data =>{
            console.log(data);
@@ -34,7 +34,7 @@ const VolNeed = () => {
           confirmButtonText: "Yes, delete it!"
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/delete/${id}`,
+            fetch(`https://assignment11-topaz.vercel.app/delete/${id}`,
       {
          method:'DELETE',
     

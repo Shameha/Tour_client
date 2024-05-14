@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader: ()=> fetch('http://localhost:5000/volunteer')
+            loader: ()=> fetch('https://assignment11-topaz.vercel.app/volunteer')
         },
         {
             path:'/login',
@@ -41,24 +41,24 @@ const router = createBrowserRouter([
         {
             path:'/need',
             element:<Need></Need>,
-            loader: ()=> fetch('http://localhost:5000/volunteer')
+            loader: ()=> fetch('https://assignment11-topaz.vercel.app/volunteer')
         },
         {
             path:'/check/:id',
             element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment11-topaz.vercel.app/volunteer/${params.id}`)
             
         },
         {
             path:'/detail/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`)
+            loader: ({params}) => fetch(`https://assignment11-topaz.vercel.app/volunteer/${params.id}`)
             
         },
         {
             path:'/grid',
              element:<PrivateRoute><Grid></Grid></PrivateRoute>,
-            loader: ()=> fetch('http://localhost:5000/volunteer')
+            loader: ()=> fetch('https://assignment11-topaz.vercel.app/volunteer')
             
         },
         {

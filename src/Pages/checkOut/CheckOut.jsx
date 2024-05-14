@@ -37,7 +37,7 @@ const CheckOut = () => {
         }
         console.log(beVolunteers);
 
-        fetch('http://localhost:5000/beVolunteer',{
+        fetch('https://assignment11-topaz.vercel.app/beVolunteer',{
             method: 'POST',
             headers:{
                 'content-type' :'application/json'

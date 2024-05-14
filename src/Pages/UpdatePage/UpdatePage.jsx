@@ -11,7 +11,7 @@ console.log(id);
 
 const[tour,setTour] = useState({});
 useEffect(()=>{
-fetch(`http://localhost:5000/update/${id}`)
+fetch(`https://assignment11-topaz.vercel.app/update/${id}`)
 .then(res=>res.json())
 .then(data =>{
   setTour(data)
@@ -41,7 +41,7 @@ const info = {
     time,
     photo
 }
-fetch(`http://localhost:5000/updateTour/${id}`,{
+fetch(`https://assignment11-topaz.vercel.app/updateTour/${id}`,{
   method:'PUT',
   headers:{
     'content-type':'application/json'

@@ -11,7 +11,7 @@ const VolPostRow = ({vols,handleDelete}) => {
 //             icon: "success"
 //           }));
 //           if(procced){
-//   fetch(`http://localhost:5000/beVolunteer/${id}`,{
+//   fetch(`https://assignment11-topaz.vercel.app/beVolunteer/${id}`,{
 //     method:'DELETE',
 
 //   })
