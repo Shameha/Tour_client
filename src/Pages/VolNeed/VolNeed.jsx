@@ -4,6 +4,7 @@ import {  useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import VolNeedRow from "./VolNeedRow";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -58,6 +59,7 @@ const VolNeed = () => {
 
     return (
         <div>
+          <Helmet><title>UnityServe | Need</title></Helmet>
             <h1>{item.length}</h1>
             <div className="overflow-x-auto">
   <table className="table">

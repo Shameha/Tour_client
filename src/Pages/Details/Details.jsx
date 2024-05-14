@@ -1,6 +1,7 @@
 // import React from 'react';
 
 // import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const Details = () => {
@@ -11,6 +12,7 @@ const Details = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+          <Helmet><title>UnityServe | Details</title></Helmet>
         <div className="hero-content flex-col lg:flex-row">
           <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
           <div>

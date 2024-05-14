@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import VolPostRow from "./VolPostRow";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const VolPost = () => {
     const{user} = useContext(AuthContext);
@@ -69,6 +70,7 @@ listing =    <tbody>
     return (
         <div>
             {/* <h2> your booking:{vol.length}</h2> */}
+            <Helmet><title>UnityServe | Need post</title></Helmet>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}

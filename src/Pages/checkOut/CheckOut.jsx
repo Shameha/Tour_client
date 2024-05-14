@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 const CheckOut = () => {
     const{user} = useContext(AuthContext)
@@ -71,6 +72,7 @@ const CheckOut = () => {
     }
     return (
         <div className="min-h-screen">
+          <Helmet><title>UnityServe | Check</title></Helmet>
         <h1 className="text-3xl font-bold text-center mt-2">Be a Volunteer</h1>
         {/* <p className="text-sm text-center mt-2" >A diverse range of places, including natural wonders, cultural and historical landmarks, architectural marvels, recreational facilities, and entertainment venues.</p> */}
         <div className="hero min-h-screen bg-base-200">

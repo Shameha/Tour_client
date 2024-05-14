@@ -2,6 +2,7 @@
 import  { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from 'sweetalert2'
+import { Helmet } from "react-helmet-async";
 
 
 const AddVol = () => {
@@ -51,6 +52,7 @@ fetch('http://localhost:5000/volunteer',{
 
     return (
         <div className="min-h-screen">
+          <Helmet><title>UnityServe | Add vol</title></Helmet>
         <h1 className="text-3xl font-bold text-center mt-2">Add Volunteer Post</h1>
         <p className="text-sm text-center mt-2" >A diverse range of places, including natural wonders, cultural and historical landmarks, architectural marvels, recreational facilities, and entertainment venues.</p>
         <div className="hero min-h-screen bg-base-200">

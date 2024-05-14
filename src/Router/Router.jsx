@@ -12,11 +12,13 @@ import VolPost from "../Pages/VolPost/VolPost";
 import PrivateRoute from "./PrivateRoute";
 import VolNeed from "../Pages/VolNeed/VolNeed";
 import UpdatePage from "../Pages/UpdatePage/UpdatePage";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 // import { Grid } from "swiper/modules";
 
 const router = createBrowserRouter([
     {
       path: "/",
+      errorElement:<ErrorPage></ErrorPage>,
       element:<Root></Root>,
       children:[
         {

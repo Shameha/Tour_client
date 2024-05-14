@@ -5,11 +5,13 @@ import Banner from "../Banner/Banner";
 import VolCard from "../VolCard/VolCard";
 import Extra from "../ExtraSection/Extra";
 import ExtraSection from "../ExtraSection/ExtraSection";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const vol = useLoaderData();
     return (
         <div>
+              <Helmet><title>UnityServe | Home</title></Helmet>
       <div className="mb-2">
          <Banner></Banner>
            </div>

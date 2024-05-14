@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -65,6 +66,7 @@ fetch(`http://localhost:5000/updateTour/${id}`,{
 }
     return (
         <div className="min-h-screen">
+          <Helmet><title>UnityServe | Update</title></Helmet>
         <h1 className="text-3xl font-bold text-center mt-2">Volunteer update</h1>
         <p className="text-sm text-center mt-2" >A diverse range of places, including natural wonders, cultural and historical landmarks, architectural marvels, recreational facilities, and entertainment venues.</p>
         <div className="hero min-h-screen bg-base-200">
