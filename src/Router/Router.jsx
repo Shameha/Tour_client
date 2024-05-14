@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/added',
-            element:<AddVol></AddVol>
+            element:<PrivateRoute><AddVol></AddVol></PrivateRoute>
         },
         {
             path:'/need',
@@ -43,19 +43,19 @@ const router = createBrowserRouter([
         },
         {
             path:'/check/:id',
-            element:<CheckOut></CheckOut>,
+            element:<PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`)
             
         },
         {
             path:'/detail/:id',
-            element:<Details></Details>,
+            element:<PrivateRoute><Details></Details></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`)
             
         },
         {
             path:'/grid',
-            element:<Grid></Grid>,
+             element:<PrivateRoute><Grid></Grid></PrivateRoute>,
             loader: ()=> fetch('http://localhost:5000/volunteer')
             
         },
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
         },
         {
             path:'/vol',
-            element:<VolNeed></VolNeed>
+            element:<PrivateRoute><VolNeed></VolNeed></PrivateRoute>
             
         },
         {
             path:'/update/:id',
-            element:<UpdatePage></UpdatePage>
+            element:<PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>
             
         }
 
