@@ -4,6 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import VolCard from "../VolCard/VolCard";
 import Extra from "../ExtraSection/Extra";
+import ExtraSection from "../ExtraSection/ExtraSection";
 
 const Home = () => {
   const vol = useLoaderData();
@@ -30,6 +31,9 @@ const Home = () => {
             <div>
             
               <Extra></Extra>
+            </div>
+            <div>
+              <ExtraSection></ExtraSection>
             </div>
         </div>
     );
