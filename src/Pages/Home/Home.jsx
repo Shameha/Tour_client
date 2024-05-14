@@ -32,7 +32,9 @@ const Home = () => {
             
               <Extra></Extra>
             </div>
+            <h1 className="test-center text-2xl font-bold mx-5">Volunteering where kindness grows and hearts overflow</h1>
             <div>
+
               <ExtraSection></ExtraSection>
             </div>
         </div>

@@ -1,4 +1,6 @@
 // import React from 'react';
+import image from"../../assets/pexels-liza-summer-6348129.jpg"
+import image1 from"../../assets/pexels-shvetsa-5029919.jpg"
 
 const Extra = () => {
     return (
@@ -11,7 +13,7 @@ const Extra = () => {
 		<div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
 			<div>
 				<h3 className="text-2xl font-bold tracking-tight sm:text-3xl dark:text-gray-900">Types of Volunteering</h3>
-				<p className="mt-3 text-lg dark:text-gray-600"> Direct service: Hands-on involvement in activities like tutoring, building homes, or serving meals at shelters.</p>
+				<p className="mt-3 text-lg dark:text-gray-600"> Hands-on involvement in activities like tutoring, building homes, or serving meals at shelters.</p>
 				<div className="mt-12 space-y-12">
 					<div className="flex">
 						<div className="flex-shrink-0">
@@ -55,7 +57,7 @@ const Extra = () => {
 				</div>
 			</div>
 			<div aria-hidden="true" className="mt-10 lg:mt-0">
-				<img src="https://source.unsplash.com/random/360x480" alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
+				<img src={image} alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
 			</div>
 		</div>
 		<div>
@@ -106,7 +108,7 @@ const Extra = () => {
 					</div>
 				</div>
 				<div className="mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1">
-					<img src="https://source.unsplash.com/random/361x481" alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
+					<img src={image1} alt="" className="mx-auto rounded-lg shadow-lg dark:bg-gray-500" />
 				</div>
 			</div>
 		</div>
